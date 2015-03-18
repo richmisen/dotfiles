@@ -1,1 +1,37 @@
-/Users/richard/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
+{
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/SublimeLinter/brogrammer (SL).tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"*.map",
+		"*.log",
+		"*.tags",
+		"*.tags_sorted_by_file",
+		"*tags",
+		"*.min.js"
+	],
+	"fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".git",
+		"log",
+		"tmp",
+		"node_modules"
+	],
+	"font_face": "Source Code Pro ExtraLight",
+	"font_size": 18,
+	"highlight_line": false,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"save_on_focus_lost": false,
+	"side_bar_width": 210,
+	"tab_size": 2,
+	"theme": "Brogrammer.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": true
+}
