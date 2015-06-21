@@ -1,23 +1,24 @@
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+#export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 #export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
 #export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 #export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.4.1/jars"
 #export AWS_ELB_HOME="/usr/local/Library/LinkedKegs/elb-tools/jars"
 #export PYTHONPATH="/opt/graphite/webapp/"
-export PATH=$HOME/bin:/Users/rich/.gem/ruby/1.8/bin:$EC2_HOME/bin:/usr/local/bin:/Developer/usr/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Developer/usr/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH
 
-#export EDITOR='/Users/rich/bin/subl'
+export EDITOR='/usr/local/bin/vim'
+export IGNOREEOF=20
 export GIT_SERVER=git@git.mediagobbler.com
 
 alias h='history'
-alias hig='history | grep'
+alias hig='history | ag'
 alias j='jobs -l'
 alias d='dirs'
 alias pd='pushd'
 alias po='popd'
 alias so='source'
 alias ls='ls -aCFG'
-alias vi='vim'
+alias vi='/usr/local/bin/vim'
 alias be='bundle exec'
 alias 1='pushd 1'
 alias 2='pushd 2'
@@ -107,13 +108,23 @@ alias gc-='git checkout -'
 # alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
 
+# Gobbler commands
+alias ssh-mkt='ssh -i ~/.ec2/users/mam/keys/West\ US/key-azure_qa.pem ubuntu@shop.gobbler-qa.com'
+alias stop-mkt='launchctl unload /usr/local/opt/gob_marketplace/homebrew.mxcl.gob_marketplace.plist'
+alias start-mkt='launchctl load /usr/local/opt/gob_marketplace/homebrew.mxcl.gob_marketplace.plist'
+alias stop-pace='launchctl unload /usr/local/opt/gob_pace_server/homebrew.mxcl.gob_pace_server.plist'
+alias start-pace='launchctl load /usr/local/opt/gob_pace_server/homebrew.mxcl.gob_pace_server.plist'
+
 # Rails
-alias dbreset='bin/rake db:drop ; bin/rake db:create ; bin/rake db:migrate ; bin/rake db:seed'
+alias dbreset='cd ~/src/gob_marketplace; bin/rake db:drop db:create db:migrate db:seed'
 
 alias srvr='python -m SimpleHTTPServer 8000'
 alias chr='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security'
 alias cuc='be cucumber features'
 alias vcr='rm -rf spec/vcr_cassettes/*'
+alias redstart='/usr/local/opt/redis/bin/redis-server /usr/local/etc/redis.conf'
+alias redstop='redis-cli -h 127.0.0.1 -p 6379 shutdown'
+alias grep='ag'
 
 # if [ -z "$EDITOR" ]; then
 #     case $OSTYPE in
