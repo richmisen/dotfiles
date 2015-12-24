@@ -78,15 +78,25 @@ augroup END
 runtime macros/matchit.vim
 " ================
 let mapleader = ","
-map <Leader>t :CommandT<CR>
 map <Leader>co ggVG"*y
 map <Leader>a :w<cr>
-map <Leader>m :Emodel
 map <Leader>m :Emodel
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+map <Leader>bb :!bundle install<cr>
+map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
+map <Leader>d Obinding.pry<esc>:w<cr>
+map <Leader>x :g/binding.pry/d<esc>:w<cr>
 
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>r :w<cr>:call RunNearestSpec()<CR>
+map <Leader>l :w<cr>:call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command = "!bin/rspec {spec}"
+let g:rspec_runner = "os_x_iterm2"
 
 let g:CommandTMaxHeight=10
 
@@ -109,12 +119,12 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-set wrap
-
 colorscheme jellybeans
 set cursorline cursorcolumn
 " Use Silver Searcher instead of grep
 set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
 set shiftround
 set clipboard=unnamed
 set laststatus=2
