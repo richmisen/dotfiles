@@ -79,7 +79,7 @@ runtime macros/matchit.vim
 " ================
 let mapleader = ","
 map <Leader>co ggVG"*y
-map <Leader>a :w<cr>
+map <Leader>w :w<cr>
 map <Leader>m :Emodel
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
