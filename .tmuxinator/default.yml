@@ -1,0 +1,21 @@
+name: work
+root: ~/src/gob_marketplace
+windows:
+  - vim:
+      layout: c313,219x53,0,0[219x10,0,0,5,219x42,0,11,6]
+      panes:
+        - clear
+        - vim
+  - rails:
+      layout: even-horizontal 
+      panes:
+        - clear
+        - clear
+  - remote:
+      layout: bd61,219x53,0,0,4
+      panes:
+        - clear
+  - pry:
+      layout: bd64,219x53,0,0,7
+      panes:
+        - clear
