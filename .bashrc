@@ -114,9 +114,11 @@ alias stop-mkt='launchctl unload /usr/local/opt/gob_marketplace/homebrew.mxcl.go
 alias start-mkt='launchctl load /usr/local/opt/gob_marketplace/homebrew.mxcl.gob_marketplace.plist'
 alias stop-pace='launchctl unload /usr/local/opt/gob_pace_server/homebrew.mxcl.gob_pace_server.plist'
 alias start-pace='launchctl load /usr/local/opt/gob_pace_server/homebrew.mxcl.gob_pace_server.plist'
+alias stop-resque-mkt='launchctl unload /usr/local/opt/gob_mkt_worker/homebrew.mxcl.gob_mkt_worker.plist'
+alias lrm='cd ~/src/gob_marketplace'
 
 # Rails
-alias dbreset='cd ~/src/gob_marketplace; bin/rake db:drop db:create db:migrate db:seed'
+alias dbreset='cd ~/src/gob_marketplace; bundle exec rake db:drop db:create db:migrate db:seed; cd ~/src/collab; bundle exec rake db:seed'
 
 alias srvr='python -m SimpleHTTPServer 8000'
 alias chr='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security'
@@ -124,7 +126,6 @@ alias cuc='be cucumber features'
 alias vcr='rm -rf spec/vcr_cassettes/*'
 alias redstart='/usr/local/opt/redis/bin/redis-server /usr/local/etc/redis.conf'
 alias redstop='redis-cli -h 127.0.0.1 -p 6379 shutdown'
-alias grep='ag'
 
 # if [ -z "$EDITOR" ]; then
 #     case $OSTYPE in
@@ -155,3 +156,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

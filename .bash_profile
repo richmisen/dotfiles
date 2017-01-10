@@ -8,3 +8,5 @@ source ~/src/mam_chef/scripts/mam_chef.bash
 
 ## rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

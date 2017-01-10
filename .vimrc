@@ -37,7 +37,6 @@ Plugin 'tpope/vim-jdaddy'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-rfactory'
 Plugin 'bling/vim-airline'
-Plugin 'godlygeek/tabular'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jgdavey/tslime.vim'
@@ -52,6 +51,7 @@ Plugin 'sickill/vim-monokai'
 " Plugin 'chriskempson/base16-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+syntax enable
 filetype plugin indent on    " required
 
 " ========================================================================
@@ -169,7 +169,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_checkers = ['tidy']
 
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
