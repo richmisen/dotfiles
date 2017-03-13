@@ -115,7 +115,7 @@ alias start-mkt='launchctl load /usr/local/opt/gob_marketplace/homebrew.mxcl.gob
 alias stop-pace='launchctl unload /usr/local/opt/gob_pace_server/homebrew.mxcl.gob_pace_server.plist'
 alias start-pace='launchctl load /usr/local/opt/gob_pace_server/homebrew.mxcl.gob_pace_server.plist'
 alias stop-resque-mkt='launchctl unload /usr/local/opt/gob_mkt_worker/homebrew.mxcl.gob_mkt_worker.plist'
-alias lrm='cd ~/src/gob_marketplace'
+alias mlrd='cd ~/src/gob_marketplace'
 
 # Rails
 alias dbreset='cd ~/src/gob_marketplace; bundle exec rake db:drop db:create db:migrate db:seed; cd ~/src/collab; bundle exec rake db:seed'
@@ -152,7 +152,7 @@ shopt -s histappend                      # append to history, don't overwrite it
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 source ~/.bash_prompt
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
