@@ -26,6 +26,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
+Plugin 'tpope/vim-rake'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/syntastic'
 Plugin 'mattn/emmet-vim'
@@ -63,8 +64,8 @@ augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
   " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,eruby,yaml,js setlocal ai sw=2 sts=2 et
-  autocmd FileType ruby,eruby,yaml setlocal path+=lib
+  autocmd FileType ruby,eruby,yaml,js,html setlocal ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml,html setlocal path+=lib
   " autocmd FileType ruby,eruby,yaml setlocal colorcolumn=80
   " Make ?s part of words
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
@@ -88,11 +89,13 @@ map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>bb :!bundle install<cr>
 map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
+map <Leader>cr :e ~/Dropbox/notes/ruby-coding-notes.rb<cr>
+map <Leader>cj :e ~/Dropbox/notes/js-coding-notes.js<cr>
 map <Leader>d obinding.pry<esc>:w<cr>
 map <Leader>x :g/binding.pry/d<esc>:w<cr>
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>t :w<cr>:call RunCurrentSpecFile()<CR>
 map <Leader>r :w<cr>:call RunNearestSpec()<CR>
 map <Leader>l :w<cr>:call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
@@ -170,10 +173,10 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_ruby_checkers = ['rubocop']
 
-#let g:syntastic_error_symbol = '❌'
-#let g:syntastic_style_error_symbol = '⁉️'
-#let g:syntastic_warning_symbol = '⚠️'
-#let g:syntastic_style_warning_symbol = '💩'
+" let g:syntastic_error_symbol = '❌'
+" let g:syntastic_style_error_symbol = '⁉️'
+" let g:syntastic_warning_symbol = '⚠️'
+" let g:syntastic_style_warning_symbol = '💩'
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
