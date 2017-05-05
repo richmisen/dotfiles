@@ -41,6 +41,8 @@ Plugin 'bling/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jgdavey/tslime.vim'
+Plugin 'bogado/file-line'
+" Plugin 'acarapetis/vim-colors-github'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -48,8 +50,8 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Colors
 " Plugin 'nanotech/jellybeans.vim'
-Plugin 'sickill/vim-monokai'
-" Plugin 'chriskempson/base16-vim'
+" Plugin 'sickill/vim-monokai'
+Plugin 'chriskempson/base16-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 syntax enable
@@ -89,16 +91,18 @@ map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>bb :!bundle install<cr>
 map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
-map <Leader>cr :e ~/Dropbox/notes/ruby-coding-notes.rb<cr>
-map <Leader>cj :e ~/Dropbox/notes/js-coding-notes.js<cr>
+map <Leader>cr :e ~/Dropbox/notes/ruby_notes.rb<cr>
+map <Leader>cj :e ~/Dropbox/notes/js_notes.js<cr>
+map <Leader>cs :e ~/Dropbox/notes/shell_notes.js<cr>
 map <Leader>d obinding.pry<esc>:w<cr>
+map <Leader>D Obinding.pry<esc>:w<cr>
 map <Leader>x :g/binding.pry/d<esc>:w<cr>
 
 " RSpec.vim mappings
 map <Leader>t :w<cr>:call RunCurrentSpecFile()<CR>
 map <Leader>r :w<cr>:call RunNearestSpec()<CR>
 map <Leader>l :w<cr>:call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>a :w<cr>:call RunAllSpecs()<CR>
 let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
 let g:rspec_runner = "os_x_iterm2"
 
@@ -132,7 +136,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 let monokaicolorspace=256
-colorscheme monokai
+" colorscheme github
 " set cursorline cursorcolumn
 " Use Silver Searcher instead of grep
 " The Silver Searcher

@@ -31,6 +31,8 @@ alias bl='bundle list'
 alias bu='bundle update'
 alias bp='bundle package'
 
+alias bep='bundle exec pry -r ./config/environment'
+
 # List directory contents
 alias sl=ls
 alias ls='ls -G'        # Compact view, show colors
