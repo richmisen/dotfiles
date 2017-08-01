@@ -129,26 +129,12 @@ alias vcr='rm -rf spec/vcr_cassettes/*'
 alias redstart='/usr/local/opt/redis/bin/redis-server /usr/local/etc/redis.conf'
 alias redstop='redis-cli -h 127.0.0.1 -p 6379 shutdown'
 
-# if [ -z "$EDITOR" ]; then
-#     case $OSTYPE in
-#       linux*)
-#         alias gd='git diff | vim -R -'
-#         ;;
-#       darwin*)
-#         alias gd='git diff | subl'
-#         ;;
-#       *)
-#         alias gd='git diff'
-#         ;;
-#     esac
-# else
-#     alias gd="git diff | $EDITOR"
-# fi
-
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 shopt -s histappend                      # append to history, don't overwrite it
+
+ssh-add -K
 
 # Save and reload the history after each command finishes
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
