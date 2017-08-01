@@ -30,10 +30,6 @@ Plugin 'tpope/vim-rake'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/syntastic'
 Plugin 'mattn/emmet-vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-jdaddy'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-rfactory'
@@ -41,8 +37,22 @@ Plugin 'bling/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jgdavey/tslime.vim'
-Plugin 'bogado/file-line'
-" Plugin 'acarapetis/vim-colors-github'
+Plugin 'kopischke/vim-fetch'
+Plugin 'majutsushi/tagbar'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'mxw/vim-jsx'
+" ES2015 code snippets (Optional)
+Plugin 'epilande/vim-es2015-snippets'
+
+" React code snippets
+Plugin 'epilande/vim-react-snippets'
+
+" Ultisnips
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -51,7 +61,8 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 " Colors
 " Plugin 'nanotech/jellybeans.vim'
 " Plugin 'sickill/vim-monokai'
-Plugin 'chriskempson/base16-vim'
+" Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 syntax enable
@@ -109,6 +120,10 @@ let g:rspec_runner = "os_x_iterm2"
 " Bad colon key
 map <Leader><Leader> :
 
+" JSX
+let g:jsx_ext_required = 0 
+let g:syntastic_javascript_checkers = ['eslint']
+
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -135,8 +150,8 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-let monokaicolorspace=256
-" colorscheme github
+" let monokaicolorspace=256
+colorscheme solarized
 " set cursorline cursorcolumn
 " Use Silver Searcher instead of grep
 " The Silver Searcher
@@ -150,6 +165,12 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+
+" SnpiUtil Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
