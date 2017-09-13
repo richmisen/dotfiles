@@ -34,6 +34,7 @@ Plugin 'tpope/vim-jdaddy'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-rfactory'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jgdavey/tslime.vim'
@@ -83,7 +84,7 @@ augroup myfiletypes
   " Make ?s part of words
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
   " Highlight trailing whitespace
-  autocmd FileType ruby match Error /\s\+$/
+  autocmd FileType ruby,js,cs,html match Error /\s\+$/
   " Clojure
   autocmd FileType clojure setlocal colorcolumn=80
   autocmd FileType clojure map <Leader>t :!lein test<cr>
@@ -120,10 +121,6 @@ let g:rspec_runner = "os_x_iterm2"
 " Bad colon key
 map <Leader><Leader> :
 
-" JSX
-let g:jsx_ext_required = 0 
-let g:syntastic_javascript_checkers = ['eslint']
-
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -132,7 +129,6 @@ nnoremap <c-l> <c-w>l
 let g:CommandTMaxHeight=10
 
 set nocompatible                " choose no compatibility with legacy vi
-syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
@@ -186,22 +182,23 @@ autocmd BufRead,BufNewFile *.txt setlocal spell
 autocmd BufRead,BufNewFile *.erb setlocal spell
 autocmd FileType gitcommit setlocal spell
 hi SpellBad cterm=underline ctermfg=red
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:airline_powerline_fonts = 1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_check_on_wq = 0
 
-" let g:syntastic_error_symbol = '❌'
-" let g:syntastic_style_error_symbol = '⁉️'
-" let g:syntastic_warning_symbol = '⚠️'
-" let g:syntastic_style_warning_symbol = '💩'
+" JSX
+let g:jsx_ext_required = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+" let g:syntastic_ruby_checkers = ['rubocop']
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
