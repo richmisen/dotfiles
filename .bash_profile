@@ -1,4 +1,9 @@
 [ -r ~/.bashrc ] && source ~/.bashrc
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 ## Gobbler
 # source ~/src/mam/config/mam-profile.bash

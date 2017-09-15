@@ -28,7 +28,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
 Plugin 'tpope/vim-rake'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-jdaddy'
 Plugin 'pangloss/vim-javascript'
@@ -58,6 +58,9 @@ Plugin 'honza/vim-snippets'
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+
+" Async Linter
+Plugin 'w0rp/ale'
 
 " Colors
 " Plugin 'nanotech/jellybeans.vim'
@@ -184,23 +187,28 @@ autocmd FileType gitcommit setlocal spell
 hi SpellBad cterm=underline ctermfg=red
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:airline_powerline_fonts = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_loc_list_height = 5
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " JSX
 let g:jsx_ext_required = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 " let g:syntastic_ruby_checkers = ['rubocop']
 
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
+" highlight link SyntasticErrorSign SignColumn
+" highlight link SyntasticWarningSign SignColumn
+" highlight link SyntasticStyleErrorSign SignColumn
+" highlight link SyntasticStyleWarningSign SignColumn
+
+" goto next Ale error
+nmap <silent> <C-a> <Plug>(ale_next_wrap)
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
