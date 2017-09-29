@@ -66,7 +66,7 @@ Plugin 'w0rp/ale'
 " Plugin 'nanotech/jellybeans.vim'
 " Plugin 'sickill/vim-monokai'
 " Plugin 'chriskempson/base16-vim'
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 syntax enable
@@ -150,7 +150,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 " let monokaicolorspace=256
-colorscheme solarized
+" colorscheme solarized
 " set cursorline cursorcolumn
 " Use Silver Searcher instead of grep
 " The Silver Searcher
