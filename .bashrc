@@ -81,6 +81,9 @@ alias   rd='rmdir'
 alias rvmr='rvm rvmrc trust; rvm rvmrc load; rvm reload ; rvm info'
 alias rvml='rvm list'
 
+# node
+alias npmt='node --inspect-brk --inspect ./node_modules/.bin/jest --runInBand'
+
 # git
 alias gcl='git clone'
 alias ga='git add'

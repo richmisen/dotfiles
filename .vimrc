@@ -109,6 +109,7 @@ map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>cr :e ~/Dropbox/notes/ruby_notes.rb<cr>
 map <Leader>cj :e ~/Dropbox/notes/js_notes.js<cr>
 map <Leader>cs :e ~/Dropbox/notes/shell_notes.js<cr>
+map <Leader>ch :e ~/Dropbox/notes/html_notes.txt<cr>
 map <Leader>d obinding.pry<esc>:w<cr>
 map <Leader>D Obinding.pry<esc>:w<cr>
 map <Leader>x :g/binding.pry/d<esc>:w<cr>
