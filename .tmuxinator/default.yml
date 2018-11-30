@@ -15,7 +15,7 @@ windows:
       layout: bd61,219x53,0,0,4
       panes:
         - clear
-  - pry:
+  - debug:
       layout: bd64,219x53,0,0,7
       panes:
         - clear

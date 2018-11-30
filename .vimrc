@@ -44,10 +44,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'mxw/vim-jsx'
 " ES2015 code snippets (Optional)
-Plugin 'epilande/vim-es2015-snippets'
+" Plugin 'epilande/vim-es2015-snippets'
 
 " React code snippets
-Plugin 'epilande/vim-react-snippets'
+" Plugin 'epilande/vim-react-snippets'
 
 " Ultisnips
 Plugin 'SirVer/ultisnips'
@@ -150,9 +150,6 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-" let monokaicolorspace=256
-" colorscheme solarized
-" set cursorline cursorcolumn
 " Use Silver Searcher instead of grep
 " The Silver Searcher
 if executable('ag')
@@ -210,6 +207,7 @@ let g:jsx_ext_required = 0
 " highlight link SyntasticStyleWarningSign SignColumn
 
 " goto next Ale error
-nmap <silent> <C-a> <Plug>(ale_next_wrap)
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
+ nmap <silent> <C-a> <Plug>(ale_next_wrap)
+ let g:ale_lint_on_save = 1
+ let g:ale_lint_on_text_changed = 0
+ let g:ale_set_highlights = 0

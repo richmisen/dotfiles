@@ -4,7 +4,7 @@
 #export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.4.1/jars"
 #export AWS_ELB_HOME="/usr/local/Library/LinkedKegs/elb-tools/jars"
 #export PYTHONPATH="/opt/graphite/webapp/"
-export PATH=$HOME/bin:/usr/local/bin:/Developer/usr/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Developer/usr/bin:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/go/bin:$PATH
 
 export EDITOR='/usr/local/bin/vim'
 export IGNOREEOF=20

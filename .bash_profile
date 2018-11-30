@@ -15,3 +15,9 @@ fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/rich/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/rich/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/rich/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/rich/Downloads/google-cloud-sdk/completion.bash.inc'; fi
